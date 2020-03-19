@@ -104,10 +104,14 @@ public class CreateExcel {
         cell.setCellStyle(style);
         // Category name
         cell = row.createCell(6, CellType.STRING);
-        cell.setCellValue("Категория");
+        cell.setCellValue("Место поставки");
         cell.setCellStyle(style);
         // Category name
         cell = row.createCell(7, CellType.STRING);
+        cell.setCellValue("Категория");
+        cell.setCellStyle(style);
+        // Category name
+        cell = row.createCell(8, CellType.STRING);
         cell.setCellValue("Ссылка на страницу");
         cell.setCellStyle(style);
         // Data
@@ -133,15 +137,18 @@ public class CreateExcel {
              // Category name (F)
             cell = row.createCell(5, CellType.STRING);
             cell.setCellValue(listOfTenders.get(tender).getStartCost());
-             // Category name (G)
+            // Category name (F)
             cell = row.createCell(6, CellType.STRING);
+            cell.setCellValue(listOfTenders.get(tender).getPlace());
+             // Category name (G)
+            cell = row.createCell(7, CellType.STRING);
             String categories = "";
             for (int j = 0; j < listOfTenders.get(tender).getCategory().size(); j++) {
                 categories += "\n" + listOfTenders.get(tender).getCategory().get(j).toString();
             }
             cell.setCellValue(categories);
             // Category name (F)
-            cell = row.createCell(7, CellType.STRING);
+            cell = row.createCell(8, CellType.STRING);
             cell.setCellValue(listOfTenders.get(tender).getRef());
         }
         File file = new File("D:/Documents/categories.xls");

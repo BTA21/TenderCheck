@@ -8,6 +8,7 @@ public class Tender {
     private String endDate;
     private String name;
     private String startCost;
+    private String place;
     private ArrayList category;
     private String ref;
 
@@ -17,8 +18,13 @@ public class Tender {
         this.endDate = "30.03.2020";
         this.name = "Строительство офиса врача общей практики";
         this.startCost = "Р 3 977 131";
+        this.place = "Уфа";
         this.category = tendersCategories;
         this.ref = "https://...";
+    }
+
+    public String getPlace() {
+        return place;
     }
 
     public String getRef() {
