@@ -6,14 +6,17 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MakeTendersList {
-    private ArrayList<String> listOfTenders;
+    private ArrayList<Tender> listOfTenders;
     private Integer numberOfTenders;
 
+    public ArrayList<Tender> getListOfTenders() {
+        return listOfTenders;
+    }
+
     public MakeTendersList(Integer numberOfTenders) throws IOException {
-        this.listOfTenders = new ArrayList<String>(0);
+        this.listOfTenders = new ArrayList<Tender>(0);
         makeTenderList(numberOfTenders);
-        showListOfTenders();
-        CreateExcel table = new CreateExcel(listOfTenders);
+        CreateExcel table = new CreateExcel(listOfTenders, "");
 
     }
 
@@ -27,8 +30,11 @@ public class MakeTendersList {
 
     public void makeTenderList(Integer numberOfTenders) {
         for (int i = 0; i < numberOfTenders; i++) {
-            String tender = makeTender();
-            this.listOfTenders.add(tender);
+            String category = makeTender();
+            ArrayList<String> categoriesList = new ArrayList<String>();
+            categoriesList.add(category);
+            Tender tenderObject = new Tender(categoriesList);
+            this.listOfTenders.add(tenderObject);
         }
     }
 

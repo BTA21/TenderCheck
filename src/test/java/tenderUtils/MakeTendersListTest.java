@@ -9,6 +9,6 @@ public class MakeTendersListTest {
 
     @Test
     public void showListOfTenders() throws IOException {
-        MakeTendersList listOfTenders = new MakeTendersList(100);
+        MakeTendersList listOfTenders = new MakeTendersList(10);
     }
 }
