@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class StringSearchUsingAhoCorasickAlgorithm {
-    StringSearchUsingAhoCorasickAlgorithm(String pattern, String txt) {
+    public StringSearchUsingAhoCorasickAlgorithm(String pattern, String txt) {
         TrieNode trie = new TrieNode();
         trie.addWord(pattern);
         trie.constructFallLinks();

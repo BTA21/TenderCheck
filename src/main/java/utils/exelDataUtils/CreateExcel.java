@@ -12,7 +12,10 @@ import utils.tenderUtils.Tender;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class CreateExcel {
     private static HSSFCellStyle createStyleForTitle(HSSFWorkbook workbook) {
@@ -151,7 +154,9 @@ public class CreateExcel {
             cell = row.createCell(8, CellType.STRING);
             cell.setCellValue(listOfTenders.get(tender).getRef());
         }
-        File file = new File("D:/Documents/categories.xls");
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH.mm.ss");
+        Date date = new Date();
+        File file = new File("D:/Documents/" + dateFormat.format(date) + ".xls");
         file.getParentFile().mkdirs();
 
         FileOutputStream outFile = new FileOutputStream(file);

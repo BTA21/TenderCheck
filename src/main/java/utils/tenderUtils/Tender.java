@@ -23,6 +23,17 @@ public class Tender {
         this.ref = "https://...";
     }
 
+    public Tender(String number, String date, String endDate, String name, String startCost, String place, ArrayList categories, String ref){
+        this.number = number;
+        this.date = date;
+        this.endDate = endDate;
+        this.name = name;
+        this.startCost = startCost;
+        this.place = place;
+        this.category = categories;
+        this.ref = ref;
+    }
+
     public String getPlace() {
         return place;
     }
