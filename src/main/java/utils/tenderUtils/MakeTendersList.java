@@ -20,9 +20,20 @@ public class MakeTendersList {
 
     }
 
+        public MakeTendersList(ArrayList<Tender> tendersArray) {
+        this.listOfTenders = tendersArray;
+    }
+
+    public MakeTendersList(Integer numberOfTenders, String nameOfExcelFile) throws IOException {
+        this.listOfTenders = new ArrayList<Tender>(0);
+        makeTenderList(numberOfTenders);
+        CreateExcel table = new CreateExcel(listOfTenders, "", nameOfExcelFile);
+
+    }
+
     public String makeTender() {
         Random enumValueRandom = new Random();
-        Integer enumIntegerValue = enumValueRandom.nextInt(17);
+        Integer enumIntegerValue = enumValueRandom.nextInt(18);
         String enumValue = "C" + enumIntegerValue;
         String category = Categories.valueOf(enumValue).getCategory();
         return category;

@@ -9,7 +9,8 @@ public class Tender {
     private String name;
     private String startCost;
     private String place;
-    private ArrayList category;
+    private ArrayList arrayCategory;
+    private String stringCategory;
     private String ref;
 
     Tender(ArrayList tendersCategories) {
@@ -19,7 +20,7 @@ public class Tender {
         this.name = "Строительство офиса врача общей практики";
         this.startCost = "Р 3 977 131";
         this.place = "Уфа";
-        this.category = tendersCategories;
+        this.arrayCategory = tendersCategories;
         this.ref = "https://...";
     }
 
@@ -30,7 +31,18 @@ public class Tender {
         this.name = name;
         this.startCost = startCost;
         this.place = place;
-        this.category = categories;
+        this.arrayCategory = categories;
+        this.ref = ref;
+    }
+
+    public Tender(String number, String date, String endDate, String name, String startCost, String place, String categories, String ref){
+        this.number = number;
+        this.date = date;
+        this.endDate = endDate;
+        this.name = name;
+        this.startCost = startCost;
+        this.place = place;
+        this.stringCategory = categories;
         this.ref = ref;
     }
 
@@ -62,11 +74,20 @@ public class Tender {
         return startCost;
     }
 
-    public ArrayList getCategory() {
-        return category;
+    public String getStringCategory() {
+        return stringCategory;
     }
 
+    public ArrayList getCategory() {
+        return arrayCategory;
+    }
+
+    public String toString1(){
+        return this.number + " " + this.date + " " + this.endDate + " " + this.name + " " + this.startCost + " " +
+                this.arrayCategory + " " + this.ref;
+    }
     public String toString(){
-        return this.number + " " + this.date + " " + this.endDate + " " + this.name + " " + this.startCost + " " + this.category;
+        return this.number + " " + this.date + " " + this.endDate + " " + this.name + " " + this.startCost + " " +
+                this.stringCategory + " " + this.ref;
     }
 }

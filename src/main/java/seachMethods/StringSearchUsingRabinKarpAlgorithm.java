@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class StringSearchUsingRabinKarpAlgorithm {
-    public final static int d = 10;
+    public final static int d = 100;
 
     StringSearchUsingRabinKarpAlgorithm(String pat, String txt, int q)
     {
@@ -19,7 +19,7 @@ public class StringSearchUsingRabinKarpAlgorithm {
         int t = 0;
         int h = 1;
         if(txt.length()<pat.length()) {
-            System.out.println("Pattern not found");
+//            System.out.println("Pattern not found");
             return;
         }
 
